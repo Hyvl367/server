@@ -1,0 +1,75 @@
+@baltika7:  url("../resource/baltika.png");
+
+@preloaderimg: url("../resource/preloader.gif");
+
+@fon: url("../resource/fon.jpg");
+
+
+body{
+    background-image: @fon;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button
+{
+    padding: 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: antiquewhite;
+    background-color: black;
+    display: block;
+    border: 3px solid aqua;
+    
+}
+button:hover
+{
+    border: 10px solid rebeccapurple;
+}
+
+  #baltika {
+  content:@baltika7;
+    position: absolute;
+    height: 350px;
+      left: 0%;
+    z-index: -1;
+    -webkit-animation:fly_baltika 10s linear infinite;
+    animation
+  }
+
+  @-webkit-keyframes fly_baltika {
+    0% {left: 0%;}
+   
+    100% {left: 100%;}
+  }
+  
+
+  
+  #hidden-menu {
+   display: none;
+  
+  }
+  //preloader
+  #preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #fbfbfb @preloaderimg no-repeat center center;
+  }
+  
+  .visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+  }
+  
+  .hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+  }
+
+//end preloader

@@ -1,0 +1,55 @@
+body {
+  background-image: url("../resource/fon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+button {
+  padding: 3px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: antiquewhite;
+  background-color: black;
+  display: block;
+  border: 3px solid aqua;
+}
+button:hover {
+  border: 10px solid rebeccapurple;
+}
+#baltika {
+  content: url("../resource/baltika.png");
+  position: absolute;
+  height: 350px;
+  left: 0%;
+  z-index: -1;
+  -webkit-animation: fly_baltika 10s linear infinite;
+}
+@-webkit-keyframes fly_baltika {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+#hidden-menu {
+  display: none;
+}
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #fbfbfb url("../resource/preloader.gif") no-repeat center center;
+}
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
