@@ -13,11 +13,11 @@ body {
     background-size: 110vw auto !important;
   }
 }
-.but {
+button {
   min-width: 300px;
   min-height: 60px;
   font-family: 'Nunito', sans-serif;
-  font-size: calc(1vw+5px);
+  font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 700;
@@ -37,7 +37,7 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.but::before {
+button::before {
   content: '';
   border-radius: 1000px;
   min-width: calc(300px + 12px);
@@ -51,16 +51,16 @@ body {
   opacity: 0;
   transition: all 0.3s ease-in-out 0s;
 }
-.but:hover,
-.but:focus {
+.button:hover,
+.button:focus {
   color: #313133;
   transform: translateY(-6px);
 }
-.but:hover::before,
-.but:focus::before {
+button:hover::before,
+button:focus::before {
   opacity: 1;
 }
-.but::after {
+button::after {
   content: '';
   width: 30px;
   height: 30px;
@@ -72,6 +72,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   animation: ring 1.5s infinite;
+}
+button:hover::after,
+button:focus::after {
+  animation: none;
+  display: none;
 }
 @keyframes ring {
   0% {
@@ -88,33 +93,22 @@ body {
 #baltika {
   content: url("../resource/baltika.png");
   position: absolute;
-  height: 120px;
+  height: 150px;
   z-index: -1;
-  -webkit-animation: rotate_baltika 12s linear infinite;
 }
 #bochka {
   content: url('../resource/planet.png');
-  height: 250px;
-  display: block;
-  margin-left: auto;
-  z-index: -1;
-  -webkit-animation: fly_bocka 40s linear infinite;
   position: absolute;
+  height: 250px;
+  left: 50%;
   top: 50%;
-  left: 45%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  -webkit-animation: fly_bocka 40s linear infinite;
 }
-#bochka::after {
-  content: 'catalog';
-}
+
+
 @keyframes fly_bocka {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotate_baltika {
   0% {
     transform: rotate(0deg);
   }
