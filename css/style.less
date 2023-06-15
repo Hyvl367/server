@@ -1,6 +1,15 @@
 @baltika7:  url("../resource/baltika.png");
 
-@bochka: url('../resource/planet.png');
+@mars-skin: url('../resource/mars.png');
+
+@cloudly-skin: url('../resource/cloudly.png');
+
+@red-skin: url('../resource/red.png');
+
+@lava-skin: url('../resource/lava.png');
+
+@mer-skin: url('../resource/mer.png');
+
 
 @preloaderimg: url("../resource/preloader.gif");
 
@@ -119,13 +128,6 @@ body{
   }
 
   #bochka{
-    content: @bochka;
-    height: 250px;
-    display: block;
-    margin-left: auto;
-    z-index: -1;
-    -webkit-animation: fly_bocka 40s linear infinite;
-    position: absolute;
     top: 50%;
     left: 45%;
   }
@@ -134,9 +136,57 @@ body{
     content: 'catalog';
   }
   
-  @keyframes fly_bocka {
+.planet {
+  display: block;
+  width: 250px;
+  -webkit-animation: p_rotate 40s linear infinite;
+  position: absolute;
+  z-index: -1;
+}
+
+.mars-skin {
+  content: @mars-skin
+
+}
+
+.cloudly-skin {
+  content: @cloudly-skin
+}
+
+.red-skin {
+  content: @red-skin
+
+}
+
+.lava-skin {
+  content: @lava-skin
+}
+
+.mer-skin{
+  content: @mer-skin
+}
+
+.planet-small{
+  width: 200px;
+}
+
+.planet-middle{
+  width: 250px;
+}
+
+.planet-large{
+  width: 300px;
+}
+
+
+  @keyframes p_rotate{
     0%{transform: rotate(0deg);}
     100%{transform: rotate(360deg);}
+  }
+
+  @keyframes p_ant_rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(-360deg);}
   }
 
   @keyframes rotate_baltika {
@@ -174,4 +224,3 @@ body{
   }
 
 //end preloader
-

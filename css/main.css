@@ -13,11 +13,11 @@ body {
     background-size: 110vw auto !important;
   }
 }
-button {
+.but {
   min-width: 300px;
   min-height: 60px;
   font-family: 'Nunito', sans-serif;
-  font-size: 22px;
+  font-size: calc(1vw+5px);
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 700;
@@ -37,7 +37,7 @@ button {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-button::before {
+.but::before {
   content: '';
   border-radius: 1000px;
   min-width: calc(300px + 12px);
@@ -51,16 +51,16 @@ button::before {
   opacity: 0;
   transition: all 0.3s ease-in-out 0s;
 }
-.button:hover,
-.button:focus {
+.but:hover,
+.but:focus {
   color: #313133;
   transform: translateY(-6px);
 }
-button:hover::before,
-button:focus::before {
+.but:hover::before,
+.but:focus::before {
   opacity: 1;
 }
-button::after {
+.but::after {
   content: '';
   width: 30px;
   height: 30px;
@@ -72,11 +72,6 @@ button::after {
   left: 50%;
   transform: translate(-50%, -50%);
   animation: ring 1.5s infinite;
-}
-button:hover::after,
-button:focus::after {
-  animation: none;
-  display: none;
 }
 @keyframes ring {
   0% {
@@ -93,22 +88,65 @@ button:focus::after {
 #baltika {
   content: url("../resource/baltika.png");
   position: absolute;
-  height: 150px;
+  height: 120px;
   z-index: -1;
+  -webkit-animation: rotate_baltika 12s linear infinite;
 }
 #bochka {
-  content: url('../resource/planet.png');
-  position: absolute;
-  height: 250px;
-  left: 50%;
   top: 50%;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  -webkit-animation: fly_bocka 40s linear infinite;
+  left: 45%;
 }
-
-
-@keyframes fly_bocka {
+#bochka::after {
+  content: 'catalog';
+}
+.planet {
+  display: block;
+  width: 250px;
+  -webkit-animation: p_rotate 40s linear infinite;
+  position: absolute;
+  z-index: -1;
+}
+.mars-skin {
+  content: url('../resource/mars.png');
+}
+.cloudly-skin {
+  content: url('../resource/cloudly.png');
+}
+.red-skin {
+  content: url('../resource/red.png');
+}
+.lava-skin {
+  content: url('../resource/lava.png');
+}
+.mer-skin {
+  content: url('../resource/mer.png');
+}
+.planet-small {
+  width: 200px;
+}
+.planet-middle {
+  width: 250px;
+}
+.planet-large {
+  width: 300px;
+}
+@keyframes p_rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes p_ant_rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotate_baltika {
   0% {
     transform: rotate(0deg);
   }
