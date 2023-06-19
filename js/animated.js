@@ -33,7 +33,7 @@ let setPlanets=()=>Array.from(planets).forEach((x,i)=> {
 
   let isOkSpawn=(newPoint,oldPoint)=>{
     debugger
-    let result=true//(Math.pow(newPoint.x-oldPoint.x)+Math.pow(newPoint.y-oldPoint.y)>=Math.pow(spawnRad));
+    let result=(Math.pow(newPoint.x-oldPoint.x)+Math.pow(newPoint.y-oldPoint.y)>=Math.pow(spawnRad));
     
     return result
   }
@@ -106,5 +106,9 @@ setPlanets();
 setInterval(move, speed)
 
 
-
-
+let bg = document.querySelector('body');
+window.addEventListener('mousemove', function(e) {
+    let x = e.clientX / window.innerWidth;
+    let y = e.clientY / window.innerHeight;  
+    bg.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
+});

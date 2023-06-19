@@ -177,3 +177,15 @@ body {
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;
 }
+img {
+  @red-skin cursor: pointer;
+}
+img:hover {
+  opacity: 0.8;
+}
+a img {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
